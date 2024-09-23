@@ -3,5 +3,38 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "test-fundamentals": {
+      "projectType": "library",
+      "root": "projects/test-fundamentals",
+      "sourceRoot": "projects/test-fundamentals/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/test-fundamentals/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/test-fundamentals/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/test-fundamentals/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/test-fundamentals/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
   }
 }
