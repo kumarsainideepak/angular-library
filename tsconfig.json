@@ -26,9 +26,6 @@
     "paths": {
       "test-fundamentals": [
         "./dist/test-fundamentals"
-      ],
-      "test-lib": [
-        "./dist/test-lib"
       ]
     }
   },
